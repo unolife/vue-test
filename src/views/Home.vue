@@ -4,6 +4,10 @@
     <input type="text" v-model="input1" />
     <button type="button" @click="getData">Get</button>
     <button type="button" @click="setData">Set</button>
+
+    <select class="form-control" v-model="region">
+      <option :key="i" :value="d.v" v-for="(d,i) in options">{{d.t}}</option>
+    </select>
   </div>
 </template>
 
@@ -14,6 +18,12 @@ export default {
       title: '개발자의 품격',
       title2: 'Seoul',
       input1: '이메일',
+      options: [
+        {v:"S",t:"Seoul"},
+        {v:"B",t:"Busan"},
+        {v:"J",t:"Jeju"},
+      ],
+      region: "B"
     };
   },
   watch: {
